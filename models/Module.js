@@ -11,7 +11,7 @@ const ModuleSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Lesson'
   }],
-  Quiz: [{
+  quiz: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Quiz'
   }],
