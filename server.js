@@ -19,6 +19,7 @@ app.use('/api/auth', authRouter)
 app.use('/modules', moduleRouter)
 app.use('/lessons', lessonsRouter)
 app.use('/quiz', quizRouter)
+app.use('/entrepreneur', entrepreneurRouter)
 
 app.use(function (req, res, next) {
   res.status(404).json({ err: "Not found" })
