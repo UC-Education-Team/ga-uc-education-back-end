@@ -1,6 +1,6 @@
 import { User } from '../models/user.js'
 import { Profile } from '../models/profile.js'
-import { Module } from '../models/modules.js'
+const module = require("../models/module")
 
 function index(req, res) {
 
