@@ -5,6 +5,7 @@ const Schema = mongoose.Schema();
 
 
 const LessonSchema = new Schema({
+  name: Sting,
   text: String,
 });
 

@@ -1,6 +1,6 @@
 import { User } from '../models/user.js'
-import { Profile } from '../models/profile.js'
-import { Module } from '../models/modules.js'
+import { Profile } from '../models/Profile.js'
+import { Module } from '../models/Module.js'
 
 function index(req, res) {
 
