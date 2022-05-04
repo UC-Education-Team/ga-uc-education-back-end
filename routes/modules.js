@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import * as moduleCtrl from '../controllers/modules.js'
+import { checkAuth } from '../middleware/auth.js'
 
 const router = Router ()
 
@@ -7,6 +8,6 @@ const router = Router ()
 router.get('/', moduleCtrl.index)
 router.get('/modules/:id', moduleCtrl.show)
 /*---------- Protected Routes ----------*/
-router.post('/modules', moduleCtrl.create)
-router.put('/modules/:id', moduleCtrl.update)
-router.delete('/modules/:id', moduleCtrl.delete)
+router.post('/modules', checkAuth, moduleCtrl.create)
+router.put('/modules/:id', checkAuth, moduleCtrl.update)
+router.delete('/modules/:id', checkAuth, moduleCtrl.delete)

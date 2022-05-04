@@ -1,12 +1,13 @@
 import { Router } from 'express'
 import * as quizCtrl from '../controllers/quizzes.js'
+import { checkAuth } from '../middleware/auth.js'
 
 const router = Router ()
 
 /*---------- Public Routes ----------*/
-router.get('/', quizCtrl.index)
-router.get('/quiz/:id', quizCtrl.show)
 /*---------- Protected Routes ----------*/
-router.post('/quiz', quizCtrl.create)
-router.put('/quiz/:id', quizCtrl.update)
-router.delete('/quiz/:id', quizCtrl.delete)
+router.get('/', checkAuth, quizCtrl.index)
+router.get('/quiz/:id', checkAuth, quizCtrl.show)
+router.post('/quiz', checkAuth, quizCtrl.create)
+router.put('/quiz/:id', checkAuth, quizCtrl.update)
+router.delete('/quiz/:id', checkAuth, quizCtrl.delete)
