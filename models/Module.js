@@ -4,7 +4,7 @@ const Schema = mongoose.Schema();
 
 
 
-const ModuleSchema = new Schema({
+const ModuleSchema = new mongoose.Schema({
   name: String,
   number: Number,
   lesson: [{
@@ -17,6 +17,12 @@ const ModuleSchema = new Schema({
   }],
 });
 
+//dfd
 
 
-module.exports = mongoose.model('Module', ModuleSchema);
+// module.exports = mongoose.model('Modulezz', ModuleSchema);
+
+
+const Module = mongoose.model('Module', ModuleSchema)
+
+export { Module }

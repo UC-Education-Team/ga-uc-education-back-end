@@ -5,6 +5,10 @@ import cors from 'cors'
 
 import { router as profilesRouter } from './routes/profiles.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as moduleRouter } from './routes/modules.js'
+import { router as lessonsRouter } from './routes/lessons.js'
+import { router as quizRouter } from './routes/quizzes.js'
+import { router as entrepreneurRouter } from './routes/entrepreneur.js'
 
 import('./config/database.js')
 
