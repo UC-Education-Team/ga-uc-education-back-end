@@ -4,9 +4,9 @@ import * as quizCtrl from '../controllers/quizzes.js'
 const router = Router ()
 
 /*---------- Public Routes ----------*/
-router.get('/', lessonsCtrl.index)
-router.get('/lessons/:id', lessonsCtrl.show)
+router.get('/', quizCtrl.index)
+router.get('/quiz/:id', quizCtrl.show)
 /*---------- Protected Routes ----------*/
-router.post('/lessons', lessonsCtrl.create)
-router.put('/lessons/:id', lessonsCtrl.update)
-router.delete('/lessons/:id', lessonsCtrl.delete)
+router.post('/quiz', quizCtrl.create)
+router.put('/quiz/:id', quizCtrl.update)
+router.delete('/quiz/:id', quizCtrl.delete)
