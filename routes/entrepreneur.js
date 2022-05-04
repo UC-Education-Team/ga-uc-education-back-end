@@ -7,9 +7,9 @@ const router = Router()
 /*---------- Public Routes ----------*/
 /*---------- Protected Routes ----------*/
 router.get('/', checkAuth, entrepreneurCtrl.index)
-router.get('/entrepreneur/:id', checkAuth, entrepreneurCtrl.show)
-router.post('/entrepreneur', checkAuth, entrepreneurCtrl.create)
-router.put('/entrepreneur/:id', checkAuth, entrepreneurCtrl.update)
-router.delete('/entrepreneur/:id', checkAuth, entrepreneurCtrl.delete)
+router.get('/:id', checkAuth, entrepreneurCtrl.show)
+router.post('/', entrepreneurCtrl.create)
+router.put('/:id', checkAuth, entrepreneurCtrl.update)
+router.delete('/:id', checkAuth, entrepreneurCtrl.delete)
 
 export { router }
