@@ -11,3 +11,5 @@ router.get('/quiz/:id', checkAuth, quizCtrl.show)
 router.post('/quiz', checkAuth, quizCtrl.create)
 router.put('/quiz/:id', checkAuth, quizCtrl.update)
 router.delete('/quiz/:id', checkAuth, quizCtrl.delete)
+
+export { router }
