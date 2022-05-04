@@ -8,6 +8,8 @@ const router = Router()
 router.get('/', moduleCtrl.index)
 router.get('/:id', moduleCtrl.show)
 /*---------- Protected Routes ----------*/
-router.post('/', checkAuth, moduleCtrl.create)
+router.post('/', moduleCtrl.create)
 router.put('/:id', checkAuth, moduleCtrl.update)
 router.delete('/:id', checkAuth, moduleCtrl.delete)
+
+export { router }

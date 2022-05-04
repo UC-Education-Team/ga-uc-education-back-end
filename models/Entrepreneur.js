@@ -4,7 +4,7 @@ const Schema = mongoose.Schema();
 
 
 
-const EntrepreneurSchema = new Schema({
+const EntrepreneurSchema = new mongoose.Schema({
   name: String,
   internalId: String,
   email: String,
@@ -18,4 +18,8 @@ const EntrepreneurSchema = new Schema({
 
 
 
-module.exports = mongoose.model('Entrepreneur', EntrepreneurSchema);
+//  module.exports = mongoose.model('Entrepreneur', EntrepreneurSchema);
+
+const Entrepreneur = mongoose.model('Entrepreneur', EntrepreneurSchema)
+
+export default Entrepreneur 
