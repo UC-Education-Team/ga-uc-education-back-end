@@ -6,7 +6,7 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 router.get('/', lessonsCtrl.index)
-router.get('/lessons/:id', lessonsCtrl.show)
+router.get('/:id', lessonsCtrl.show)
 /*---------- Protected Routes ----------*/
 router.post('/', lessonsCtrl.create)
 router.put('/:id', checkAuth, lessonsCtrl.update)
