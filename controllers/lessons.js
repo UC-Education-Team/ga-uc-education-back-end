@@ -9,7 +9,7 @@ function index(req, res) {
 
 async function show(req, res) {
   try {
-    const foundModule = await Module.findOne({_id: req.params.id }).populate('lesson quiz')
+    const foundModule = await Module.findOne({ _id: req.params.id }).populate('lesson quiz')
     res.json(foundModule)
   } catch (err) {
     console.log(err)
@@ -17,10 +17,13 @@ async function show(req, res) {
 }
 
 
-function create(req, res) {
-  Lesson.create(req.body)
-    .then(data => res.status(200).json(data))
-    .catch(err => res.status(500).json(err))
+async function create(req, res) {
+  const newLesson = await Lesson.create(req.body)
+  const selectedModule = await Module.find({ _id: req.body.moduleId })
+  console.log(selectedModule)
+  selectedModule[0].lesson.push(newLesson._id)
+  await selectedModule[0].save()
+  return res.send(newLesson)
 }
 
 function update(req, res) {
