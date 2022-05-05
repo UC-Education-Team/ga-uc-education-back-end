@@ -15,7 +15,9 @@ function create(req, res) {
 }
 
 function update(req, res) {
-
+  Quiz.findByIdAndUpdate(req.body._id, req.body, { new: true })
+    .then(data => res.status(200).json(data))
+    .catch(err => res.status(500).json(err))
 }
 
 function deleteModule(req, res) {
