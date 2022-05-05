@@ -6,7 +6,7 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 /*---------- Protected Routes ----------*/
-router.get('/', checkAuth, quizCtrl.index)
+router.get('/', quizCtrl.index)
 router.get('/:id', checkAuth, quizCtrl.show)
 router.post('/', quizCtrl.create)
 router.put('/:id', checkAuth, quizCtrl.update)

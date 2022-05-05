@@ -1,6 +1,7 @@
 import { User } from '../models/user.js'
 import { Profile } from '../models/Profile.js'
 import { Module } from '../models/Module.js'
+import { Quiz } from '../models/Quiz.js'
 
 function index(req, res) {
 
@@ -28,6 +29,7 @@ function deleteModule(req, res) {
 
 function moduleCall(req, res) {
   Module.find({})
+    .populate('quiz')
     .then(result => (res.json(result)))
     .catch(err => console.log(err))
 }
