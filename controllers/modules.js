@@ -28,7 +28,7 @@ function deleteModule(req, res) {
 
 function moduleCall(req, res) {
   Module.find({})
-    .then(result => console.log(res.json(result)))
+    .then(result => (res.json(result)))
     .catch(err => console.log(err))
 }
 
