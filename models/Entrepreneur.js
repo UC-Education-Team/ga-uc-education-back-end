@@ -22,4 +22,4 @@ const EntrepreneurSchema = new mongoose.Schema({
 
 const Entrepreneur = mongoose.model('Entrepreneur', EntrepreneurSchema)
 
-export { Entrepreneur }
+export default Entrepreneur 

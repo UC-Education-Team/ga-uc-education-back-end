@@ -1,4 +1,4 @@
-import { Entrepreneur } from '../models/entrepreneur.js'
+import Entrepreneur from '../models/Entrepreneur.js'
 
 function index(req, res) {
   Entrepreneur.find({})
@@ -11,7 +11,7 @@ function index(req, res) {
 
 async function show(req, res) {
   try {
-    const foundEntrepreneur = await Entrepreneur.findOne({_id: req.params.id })
+    const foundEntrepreneur = await Entrepreneur.findOne({ _id: req.params.id })
     res.json(foundEntrepreneur)
   } catch (err) {
     console.log(err)
@@ -27,7 +27,7 @@ async function create(req, res) {
       phone: req.body.phone,
       address: req.body.address,
     })
-    
+
     res.json(newEntrepreneur)
   } catch (err) {
     console.log(err)

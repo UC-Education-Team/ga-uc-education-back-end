@@ -8,8 +8,8 @@ const router = Router()
 router.get('/', lessonsCtrl.index)
 router.get('/lessons/:id', lessonsCtrl.show)
 /*---------- Protected Routes ----------*/
-router.post('/lessons', checkAuth, lessonsCtrl.create)
-router.put('/lessons/:id', checkAuth, lessonsCtrl.update)
-router.delete('/lessons/:id', checkAuth, lessonsCtrl.delete)
+router.post('/', lessonsCtrl.create)
+router.put('/:id', checkAuth, lessonsCtrl.update)
+router.delete('/:id', checkAuth, lessonsCtrl.delete)
 
 export { router }
