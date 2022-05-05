@@ -8,7 +8,7 @@ const router = Router()
 router.get('/', lessonsCtrl.index)
 router.get('/lessons/:id', lessonsCtrl.show)
 /*---------- Protected Routes ----------*/
-router.post('/', checkAuth, lessonsCtrl.create)
+router.post('/', lessonsCtrl.create)
 router.put('/:id', checkAuth, lessonsCtrl.update)
 router.delete('/:id', checkAuth, lessonsCtrl.delete)
 
