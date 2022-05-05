@@ -5,6 +5,7 @@ const Schema = mongoose.Schema();
 
 
 const QuizSchema = new mongoose.Schema({
+  name: String,
   answers: [{ String }],
   questions: [{ String }],
   module: {
