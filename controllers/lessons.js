@@ -17,10 +17,12 @@ function create(req, res) {
 }
 
 function update(req, res) {
-
+  Lesson.findByIdAndUpdate(req.body._id, req.body, { new: true })
+    .then(data => res.status(200).json(data))
+    .catch(err => res.status(500).json(err))
 }
 
-function deleteModule(req, res) {
+function deleteLesson(req, res) {
 
 }
 
