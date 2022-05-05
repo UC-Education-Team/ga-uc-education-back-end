@@ -5,7 +5,7 @@ import { checkAuth } from "../middleware/auth.js";
 const router = Router();
 
 /*---------- Public Routes ----------*/
-router.get('/', moduleCtrl.index)
+router.get('/', moduleCtrl.moduleCall)
 router.get('/:id', moduleCtrl.show)
 /*---------- Protected Routes ----------*/
 router.post('/', moduleCtrl.create)

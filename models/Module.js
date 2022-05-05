@@ -17,9 +17,6 @@ const ModuleSchema = new mongoose.Schema({
   }],
 });
 
-//dfd
-
-
 // module.exports = mongoose.model('Modulezz', ModuleSchema);
 
 
