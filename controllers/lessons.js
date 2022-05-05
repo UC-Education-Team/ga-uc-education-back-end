@@ -31,5 +31,5 @@ export {
   show,
   create,
   update,
-  deleteModule as delete,
+  deleteLesson as delete,
 }

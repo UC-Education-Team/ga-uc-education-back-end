@@ -22,7 +22,7 @@ function update(req, res) {
     .catch(err => res.status(500).json(err))
 }
 
-function deleteModule(req, res) {
+function deleteQuiz(req, res) {
 
 }
 
@@ -31,5 +31,5 @@ export {
   show,
   create,
   update,
-  deleteModule as delete,
+  deleteQuiz as delete,
 }

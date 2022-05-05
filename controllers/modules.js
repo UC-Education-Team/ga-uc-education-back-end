@@ -28,8 +28,8 @@ function deleteModule(req, res) {
 
 function moduleCall(req, res) {
   Module.find({})
-    .then(result => console.log(res.json(result)))
-    .catch(err => console.log(err))
+    .then(result => res.json(result))
+    .catch(err => res, json(err)
 }
 
 
