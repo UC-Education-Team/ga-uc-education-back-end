@@ -17,7 +17,9 @@ function create(req, res) {
 }
 
 function update(req, res) {
-
+  Module.findByIdAndUpdate(req.body._id, req.body, { new: true })
+    .then(data => res.status(200).json(data))
+    .catch(err => res.status(500).json(err))
 }
 
 function deleteModule(req, res) {
@@ -26,9 +28,9 @@ function deleteModule(req, res) {
 
 function moduleCall(req, res) {
   Module.find({})
-  .then(result => console.log(res.json(result)))
-  .catch(err => console.log(err))
-} 
+    .then(result => console.log(res.json(result)))
+    .catch(err => console.log(err))
+}
 
 
 export {
