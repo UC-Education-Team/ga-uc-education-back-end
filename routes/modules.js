@@ -1,8 +1,8 @@
-import { Router } from 'express'
-import * as moduleCtrl from '../controllers/modules.js'
-import { checkAuth } from '../middleware/auth.js'
+import { Router } from "express";
+import * as moduleCtrl from "../controllers/modules.js";
+import { checkAuth } from "../middleware/auth.js";
 
-const router = Router()
+const router = Router();
 
 /*---------- Public Routes ----------*/
 router.get('/', moduleCtrl.index)
