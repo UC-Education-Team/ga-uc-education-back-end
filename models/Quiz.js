@@ -7,7 +7,12 @@ const Schema = mongoose.Schema();
 const QuizSchema = new mongoose.Schema({
   answers: [{ String }],
   questions: [{ String }],
+  module: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Module'
+  }
 });
+
 
 
 
