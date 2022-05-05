@@ -5,6 +5,10 @@ import cors from 'cors'
 
 import { router as profilesRouter } from './routes/profiles.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as moduleRouter } from './routes/modules.js'
+import { router as lessonsRouter } from './routes/lessons.js'
+import { router as quizRouter } from './routes/quizzes.js'
+import { router as entrepreneurRouter } from './routes/entrepreneur.js'
 
 import('./config/database.js')
 
@@ -16,6 +20,10 @@ app.use(express.json())
 
 app.use('/api/profiles', profilesRouter)
 app.use('/api/auth', authRouter)
+app.use('/modules', moduleRouter)
+app.use('/lessons', lessonsRouter)
+app.use('/quiz', quizRouter)
+app.use('/entrepreneur', entrepreneurRouter)
 
 app.use(function (req, res, next) {
   res.status(404).json({ err: "Not found" })
