@@ -3,17 +3,22 @@ import { Profile } from '../models/Profile.js'
 import { Quiz } from '../models/Quiz.js'
 
 function index(req, res) {
-
+  Quiz.find({})
+    .populate('module')
+    .then(result => (res.json(result)))
+    .catch(err => console.log(err))
 }
 
 function show(req, res) {
 
 }
 
-function create(req, res) {
-  Quiz.create(req.body)
-    .then(data => res.status(200).json(data))
-    .catch(err => res.status(500).json(err))
+async function create(req, res) {
+  const newQuiz = await Quiz.create(req.body)
+  const selectedModule = await Module.find({ _id: newQuiz.body.module })
+  selectedModule.quiz.push(newQuiz._id)
+  await selectedModule.save()
+  return res.send(newQuiz)
 }
 
 function update(req, res) {
@@ -22,7 +27,7 @@ function update(req, res) {
     .catch(err => res.status(500).json(err))
 }
 
-function deleteModule(req, res) {
+function deleteQuiz(req, res) {
 
 }
 
@@ -31,5 +36,5 @@ export {
   show,
   create,
   update,
-  deleteModule as delete,
+  deleteQuiz as delete,
 }
